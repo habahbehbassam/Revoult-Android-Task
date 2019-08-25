@@ -1,0 +1,11 @@
+<resources>
+
+    <!--Base-->
+    <string name="app_name">Revoult Android Task</string>
+    <!---->
+
+    <!--Currency Activity-->
+    <string name="rate">Rate</string>
+    <!---->
+
+</resources>

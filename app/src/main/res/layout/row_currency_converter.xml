@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="currency" type="com.app.revoultandroidtask.models.rate.RateModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+
+        <ImageView
+                android:id="@+id/iv_flag"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_symbol"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_earth"/>
+
+        <TextView
+                android:id="@+id/tv_symbol"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toEndOf="@id/iv_flag"
+                tools:text="EUR"
+                android:text="@{currency.symbol}"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"/>
+
+        <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/iv_flag"
+                app:layout_constraintTop_toBottomOf="@id/tv_symbol"
+                app:layout_constraintStart_toStartOf="@id/tv_symbol"
+                tools:text="EUR"
+                android:text="@{currency.symbol}"
+                android:textColor="@color/textGray"
+                android:textSize="14sp"/>
+
+        <EditText
+                android:id="@+id/et_amount"
+                tools:text="1.00"
+                android:minWidth="50dp"
+                android:inputType="numberDecimal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:text="@{currency.rate.toString()}"
+                app:layout_constraintTop_toTopOf="@id/iv_flag"
+                app:layout_constraintBottom_toBottomOf="@id/iv_flag"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
